@@ -1,0 +1,19 @@
+# サービスの定義
+services:
+  # vite-appというサービスを定義
+  vite-app:
+    # ビルドするDockerfileを指定。今回はDockerfileがあるディレクトリをビルドする
+    build: .
+    # ポートを指定。ローカルの5173とコンテナの5173をマッピング
+    ports:
+      - "5173:5173"  # ポートをマッピング
+    # ボリュームをマウント。ローカルのディレクトリをコンテナの/appにマウント
+    volumes:
+    # カレントディレクトリをコンテナの/appにマウント。要はコンテナからローカルのカレントディレクトリにアクセスできるようにするってこと
+      - .:/app
+    # 環境変数を設定
+    environment:
+      # NODE_ENVをdevelopmentに設定
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
