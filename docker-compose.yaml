@@ -15,4 +15,5 @@ services:
     environment:
       # NODE_ENVをdevelopmentに設定
       - NODE_ENV=development
+    stdin_open: true
     tty: true
