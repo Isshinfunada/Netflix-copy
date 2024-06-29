@@ -3,7 +3,9 @@ services:
   # vite-appというサービスを定義
   vite-app:
     # ビルドするDockerfileを指定。今回はDockerfileがあるディレクトリをビルドする
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     # ポートを指定。ローカルの5173とコンテナの5173をマッピング
     ports:
       - "5173:5173"  # ポートをマッピング
