@@ -1,3 +1,11 @@
+import { Movie } from "./useProps.ts";
+
+type LayoutProps = {
+  title: string;
+  movies: Movie[];
+  isLargeRow?: boolean;
+};
+
 export const Layout = ({ title, movies, isLargeRow }: LayoutProps) => {
     const image_url = "https://image.tmdb.org/t/p/original";
     return (
