@@ -35,9 +35,9 @@ export const Layout = ({ title, movies, isLargeRow, handleClick, trailerUrl}: La
         {movies.map((movie) => (
           <img
             key={movie.id}
-            className={`object-contain w-full max-h-24 m-2 transform transition-transform duration-450 ${
-              isLargeRow ? "max-h-60 hover:scale-110" : "hover:scale-108"
-            }`}
+            className={`object-contain w-full m-2 transform transition-transform duration-450 ${
+              isLargeRow ? "max-h-60" : "max-h-24"
+            } hover:scale-110`}
             src={` ${image_url}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}
