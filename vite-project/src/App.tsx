@@ -1,10 +1,12 @@
 import { requests } from "./request";
 import { Row } from "./components/Row/index";
+import { Banner } from "./components/Banner/index";
 
 function App() {
   return (
    // 追加箇所
     <div className="App bg-black">
+     <Banner />
      <Row 
       title="Netflix Originals" 
       fetchUrl={requests.fetchNetflixOriginals} 
