@@ -6,7 +6,7 @@ https://zenn.dev/gunners6518/books/4c4672f32dd100
 Vite * React
 
 デプロイ
-https://netflix-copy-bcyujlmtb-paraponeras-projects.vercel.app/
+https://netflix-copy-red.vercel.app/
 
 ローカル環境動作要件
 ```
