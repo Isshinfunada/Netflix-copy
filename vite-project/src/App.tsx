@@ -4,7 +4,7 @@ import { Row } from "./components/Row/index";
 function App() {
   return (
    // 追加箇所
-    <div className="App">
+    <div className="App bg-black">
      <Row 
       title="Netflix Originals" 
       fetchUrl={requests.fetchNetflixOriginals} 
