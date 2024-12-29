@@ -1,6 +1,7 @@
 // Reactから必要なフックをインポート
 import { useEffect, useState } from "react";
 import { Movie } from "../../type";
+import { requests } from "../../request"; // requestをインポート
 // axiosをインポート (APIリクエスト用ライブラリ)
 import axios from "../../axios"; // axiosの設定ファイルへの相対パス
 
@@ -8,6 +9,7 @@ import axios from "../../axios"; // axiosの設定ファイルへの相対パス
 export const useProps = (fetchUrl: string) => { 
   // moviesという状態変数を定義し、初期値は空の配列
   const [movies, setMovies] = useState<Movie[]>([]); 
+  const [trailerUrl, setTrailerUrl] = useState<string | null>("");
 
   // useEffectフックを使ってAPIからデータを取得
   useEffect(() => {
@@ -35,6 +37,19 @@ export const useProps = (fetchUrl: string) => {
     fetchData();
   }, [fetchUrl]); // fetchUrlが変更されたときのみuseEffect内の処理を実行
 
+  const handleClick = async (movie: Movie) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    }else{
+      const moviePlayUrl = await axios.get(requests.fetchMovieVideos(movie.id));
+      setTrailerUrl(moviePlayUrl.data.results[0]?.key);
+    }
+  };
+
   // movies状態変数を返す
-  return movies; 
+  return {
+  movies,
+  trailerUrl,
+  handleClick,
+  };
 };
