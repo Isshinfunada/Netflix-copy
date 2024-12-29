@@ -15,7 +15,6 @@ export const useProps = (fetchUrl: string) => {
     async function fetchData() {
       // fetchUrlで指定されたURLにAPIリクエストを送信
       const request = await axios.get(fetchUrl); 
-      console.log(request.data.results)
 
       // レスポンスデータから必要な情報を抽出し、movies配列を作成
       const movies = request.data.results.map((movie: Movie) => ({
