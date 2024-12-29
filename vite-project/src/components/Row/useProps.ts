@@ -1,16 +1,8 @@
 // Reactから必要なフックをインポート
 import { useEffect, useState } from "react";
-
+import { Movie } from "../../type";
 // axiosをインポート (APIリクエスト用ライブラリ)
 import axios from "../../axios"; // axiosの設定ファイルへの相対パス
-
-// 映画データの型定義
-export type Movie = {
-  id: string;           // 映画のID
-  name: string;         // 映画のタイトル
-  poster_path: string;  // ポスター画像のパス
-  backdrop_path: string; // 背景画像のパス
-};
 
 // カスタムフック useProps を定義
 export const useProps = (fetchUrl: string) => { 

@@ -1,4 +1,4 @@
-import { Movie } from "./useProps";
+import { Movie } from "./../../type";
 
 type LayoutProps = {
   title: string;
